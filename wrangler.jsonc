@@ -1,0 +1,23 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "clawora-commerce",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-09-18",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*", "/media/*", "/sitemap.xml"]
+  },
+  "d1_databases": [
+    { "binding": "DB" }
+  ],
+  "r2_buckets": [
+    { "binding": "MEDIA" }
+  ],
+  "vars": {
+    "STORE_NAME": "Clawora Beauty",
+    "STORE_LOCALE": "en-PK",
+    "CURRENCY": "PKR"
+  }
+}
